@@ -29,7 +29,7 @@ function App() {
       let products = JSON.parse(window.localStorage.getItem("products"));
       dispatch(addproducts(products));
     });
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="App">
