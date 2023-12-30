@@ -45,7 +45,7 @@ export default function ProductItem({ item }) {
   // making delete request
   function handleDelelteProduct(item) {
     let url = `https://my-json-server.typicode.com/jaiswalaryan/data/products/${item.id}`;
-    let result = customFetch(url, { method: "DELETE" });
+    customFetch(url, { method: "DELETE" });
 
     let index = products.indexOf(item);
     products.splice(index, 1);
