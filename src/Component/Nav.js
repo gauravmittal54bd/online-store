@@ -1,18 +1,17 @@
+import React from "react";
 import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+
 export default function Nav() {
   const navigate = useNavigate();
   let total = useSelector((state) => state.totalCart);
-return (
-    <nav
-      className="navbar navbar-expand-lg p-4 align-items-center"
-      style={style.nav}
-    >
+
+  return (
+    <nav className="navbar navbar-expand-lg p-4 align-items-center" style={style.nav}>
       <div className="container-fluid">
-        <a className="navbar-brand fs-3" href="#" style={style.navHead}>
+        <Link to="/" className="navbar-brand fs-3" style={style.navHead}>
           E-commerce
-        </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -27,7 +26,7 @@ return (
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <Link to="/" className="nav-link active text-light" href="#">
+              <Link to="/" className="nav-link active text-light">
                 Products
               </Link>
             </li>
@@ -42,8 +41,8 @@ return (
               src="https://cdn-icons-png.flaticon.com/512/4290/4290854.png"
               alt="error"
               width={"40rem"}
-            onClick={() => navigate("/cart")}
-            style={{cursor:"pointer"}}
+              onClick={() => navigate("/cart")}
+              style={{ cursor: "pointer" }}
             />
             {total ? (
               <p
@@ -60,17 +59,14 @@ return (
             ) : (
               ""
             )}
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/236/236832.png"
-              alt="error"
-              width={"40rem"}
-            />
+            <img src="https://cdn-icons-png.flaticon.com/512/236/236832.png" alt="error" width={"40rem"} />
           </div>
         </div>
       </div>
     </nav>
   );
 }
+
 const style = {
   nav: {
     backgroundColor: "var(--nav)",
@@ -80,4 +76,3 @@ const style = {
     color: "#f47289",
   },
 };
-// #9375b7
