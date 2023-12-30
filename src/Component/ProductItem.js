@@ -28,7 +28,7 @@ export default function ProductItem({ item }) {
     navigate(`/productdetails/${item.id}`);
   }
   function handleCart(item) {
-    if (addedItem) {
+    if (addedItem === true) {
       item.qty = 1;
       dispatchCart(addCart(item));
       dispatchTotal(CartItems());
@@ -61,6 +61,7 @@ export default function ProductItem({ item }) {
   function handleSave(item) {
     let url = `https://my-json-server.typicode.com/jaiswalaryan/data/products/${item.id}`;
     let result = customFetch(url, {
+      method: "PUT",
       body: {
         ...item,
         title,
@@ -68,8 +69,7 @@ export default function ProductItem({ item }) {
         rating,
         description,
         edit: true,
-      },
-      method: "PUT",
+      }
     });
     result.then((data) => {
       let index = products.indexOf(item);
