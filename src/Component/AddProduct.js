@@ -28,7 +28,7 @@ export default function AddProduct() {
   const [description, setdescription] = useState("");
   const [price, setprice] = useState("");
   const [category, setcategory] = useState("");
-  const [thumbnail, setthumbmail] = useState("");
+  const [thumbnail, setthumbnail] = useState("");
   const [rating, setrating] = useState("");
 
   let url = "https://my-json-server.typicode.com/jaiswalaryan/data/products";
@@ -56,7 +56,7 @@ export default function AddProduct() {
     setcategory("");
     setdescription("");
     setrating("");
-    setthumbmail("");
+    setthumbnail("");
     setprice("");
   }
   return (
@@ -92,7 +92,7 @@ export default function AddProduct() {
           type="text"
           className="p-2"
           placeholder="Thumbnail image Url"
-          onChange={(e) => setthumbmail(e.target.value)}
+          onChange={(e) => setthumbnail(e.target.value)}
         />
         <input
           type="text"
