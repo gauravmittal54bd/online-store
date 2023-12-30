@@ -28,7 +28,7 @@ export default function ProductItem({ item }) {
     navigate(`/productdetails/${item.id}`);
   }
   function handleCart(item) {
-    if (addedItem === true) {
+    if (addedItem) {
       item.qty = 1;
       dispatchCart(addCart(item));
       dispatchTotal(CartItems());
